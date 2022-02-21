@@ -13,6 +13,8 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
+// BOOTSTRAP
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

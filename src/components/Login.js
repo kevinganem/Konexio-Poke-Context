@@ -7,7 +7,6 @@
 // --------------------------------------------------------------------------- //
 // REACT
 import React from "react";
-// HOOK FORM
 import { useForm } from "react-hook-form";
 
 export default function Login() {
@@ -21,6 +20,8 @@ export default function Login() {
   return (
     <div>
       <h1>Login</h1>
+
+      {/* FORM  */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register("username", { required: true })} />
         {errors.username && <span>Username is required.</span>}
@@ -28,6 +29,7 @@ export default function Login() {
         {errors.password && <span>Please enter a password.</span>}
         <input type="submit" />
       </form>
+      {/* END OF FORM  */}
     </div>
   );
 }
