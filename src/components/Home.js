@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(randomNumber);
 
   useEffect(() => {
     console.log("Initializing");
