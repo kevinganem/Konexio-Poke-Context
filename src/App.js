@@ -19,9 +19,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
+      <nav className="pt-3">
+        <Link className="p-3" to="/">
+          Home
+        </Link>
+        <Link className="p-3" to="/login">
+          Login
+        </Link>
       </nav>
       <Switch>
         <Route exact path="/" component={Home} />

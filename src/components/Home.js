@@ -36,21 +36,36 @@ export default function Home() {
         <div className="spinner-border text-primary" role="status" />
       ) : (
         <>
-          <h1>Home</h1>
-          <div>
-            <h3>Name : {pokemon.name}</h3>
-            <h3>Height : {pokemon.height}</h3>
-            <h3>Weight : {pokemon.weight}</h3>
-            <ul>
-              <h3>Type : </h3>
-              {pokemon.types.map((types) => (
-                <li> {types.type.name} </li>
-              ))}
-            </ul>
+          <h1 className="text-center">Home</h1>
+          <div className="d-flex justify-content-center p-3">
+            <div className="card" style={{ width: "18rem" }}>
+              <img
+                src={pokemon.sprites.front_default}
+                className="card-img-top"
+                alt="Pokémon"
+              />
+              <div className="card-body">
+                <h5 className="card-title text-capitalize">{pokemon.name}</h5>
+                <ul className="card-text">
+                  <li>Height : {pokemon.height}</li>
+                  <li>Weight : {pokemon.weight}</li>
+                </ul>
+              </div>
+              <ul className="list-group list-group-flush">
+                {pokemon.types.map((types) => (
+                  <li className="list-group-item"> {types.type.name} </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <button className="" onClick={() => setId(randomNumber)}>
-            Random Pokémon
-          </button>
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn btn-outline-success"
+              onClick={() => setId(randomNumber)}
+            >
+              Random Pokémon
+            </button>
+          </div>
         </>
       )}
     </div>
