@@ -19,11 +19,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <BrowserRouter>
-      <nav className="pt-3">
-        <Link className="p-3" to="/">
+      <nav className="nav pt-3">
+        <Link className="p-3 nav-item nav-link active" to="/">
           Home
         </Link>
-        <Link className="p-3" to="/login">
+        <Link className="p-3 nav-item nav-link active" to="/login">
           Login
         </Link>
       </nav>
