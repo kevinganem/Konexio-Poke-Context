@@ -45,15 +45,20 @@ export default function Home() {
                 alt="Pokémon"
               />
               <div className="card-body">
-                <h5 className="card-title text-capitalize">{pokemon.name}</h5>
-                <ul className="card-text">
+                <h5 className="card-title text-capitalize text-center">
+                  {pokemon.name}
+                </h5>
+                <ul className="card-text list-unstyled text-center">
                   <li>Height : {pokemon.height}</li>
                   <li>Weight : {pokemon.weight}</li>
                 </ul>
               </div>
-              <ul className="list-group list-group-flush">
+              <ul className="list-group list-group-flush text-center">
                 {pokemon.types.map((types) => (
-                  <li className="list-group-item"> {types.type.name} </li>
+                  <li className="list-group-item">
+                    {" "}
+                    Type : {types.type.name}{" "}
+                  </li>
                 ))}
               </ul>
             </div>
