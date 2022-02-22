@@ -9,6 +9,8 @@
 import { useForm } from "react-hook-form";
 import React, { useContext } from "react";
 import { UserContext } from "../context/userContext";
+// ROUTER
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
   const { isLogged, setAuth } = useContext(UserContext);
@@ -17,14 +19,21 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const history = useHistory();
 
   const onSubmit = (data) => {
     setAuth();
     console.log(data);
-    console.log(isLogged);
+    history.push("/");
   };
 
-  return (
+  return isLogged ? (
+    <div className="d-flex justify-content-center">
+      <div onClick={onSubmit} className="btn btn-danger">
+        Logout
+      </div>
+    </div>
+  ) : (
     <div>
       <h1 className="text-center">Login</h1>
       {/* FORM WITH BOOTSTRAP  */}
@@ -36,7 +45,10 @@ export default function Login() {
               type="text"
               className="form-control"
               placeholder="Type your username..."
-              {...register("username", { required: true, maxLength: 15 })}
+              {...register("username", {
+                required: "This is required",
+                maxLength: 15,
+              })}
             >
               {errors.username && <span>Username is required.</span>}
             </input>
@@ -50,20 +62,17 @@ export default function Login() {
               type="password"
               className="form-control"
               placeholder="Type your password..."
-              {...register("password", { required: true, minLength: 6 })}
+              {...register("password", {
+                required: "This is required",
+                minLength: 6,
+              })}
             >
               {errors.password && <span>Please enter a password.</span>}
             </input>
           </div>
-          {isLogged ? (
-            <button onClick={handleSubmit(onSubmit)} className="btn btn-danger">
-              Logout
-            </button>
-          ) : (
-            <button type="submit" className="btn btn-primary">
-              Login
-            </button>
-          )}
+          <button type="submit" className="btn btn-primary">
+            Login
+          </button>
         </form>
       </div>
       {/* END OF FORM WITH BOOTSTRAP */}
