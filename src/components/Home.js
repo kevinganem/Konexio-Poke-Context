@@ -81,8 +81,8 @@ export default function Home() {
     );
   } else {
     return (
-      <Link to="/login">
-        <h1 className="text-center text-decoration-none"> Login first ! </h1>
+      <Link className="text-decoration-none" to="/login">
+        <h1 className="text-center"> Click here to login </h1>
       </Link>
     );
   }
