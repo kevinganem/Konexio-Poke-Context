@@ -28,7 +28,7 @@ export default function Login() {
   };
 
   return isLogged ? (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center p-3">
       <div onClick={onSubmit} className="btn btn-danger">
         Logout
       </div>
