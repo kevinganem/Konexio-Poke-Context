@@ -82,7 +82,13 @@ export default function Home() {
   } else {
     return (
       <Link className="text-decoration-none" to="/login">
-        <h1 className="text-center"> Click here to login </h1>
+        <h1 className="text-center p-3"> Click here to login </h1>
+        <div className="d-flex justify-content-center">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            alt="Pokémon"
+          />
+        </div>
       </Link>
     );
   }

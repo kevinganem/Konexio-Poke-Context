@@ -27,11 +27,11 @@ export default function App() {
   return (
     <UserContext.Provider value={{ isLogged, setAuth }}>
       <BrowserRouter>
-        <nav className="nav pt-3">
-          <Link className="p-3 nav-item nav-link active" to="/">
+        <nav className="nav p-3 bg-danger bg-gradient">
+          <Link className="p-3 nav-item nav-link active text-light" to="/">
             Home
           </Link>
-          <Link className="p-3 nav-item nav-link active" to="/login">
+          <Link className="p-3 nav-item nav-link active text-light" to="/login">
             Login
           </Link>
         </nav>

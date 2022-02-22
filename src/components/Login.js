@@ -35,7 +35,7 @@ export default function Login() {
     </div>
   ) : (
     <div>
-      <h1 className="text-center">Login</h1>
+      <h1 className="text-center p-3">Login</h1>
       {/* FORM WITH BOOTSTRAP  */}
       <div className="d-flex justify-content-center">
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: "25rem" }}>
